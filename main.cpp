@@ -2,9 +2,9 @@
 
 bool checkSymbols(char c, bool isLeftPartOfEmail)
 {
-    if (c >= '0' && c <= '9' ||
-        c >= 'a' && c <='z' ||
-        c >= 'A' && c <='Z' ||
+    if ((c >= '0' && c <= '9') ||
+        (c >= 'a' && c <='z') ||
+        (c >= 'A' && c <='Z') ||
         c == '-' ||
         c == '.' ||
         c == '@')
@@ -51,7 +51,7 @@ bool checkEmailCorrectness(std::string email)
             rightPartLength++;
             if (rightPartLength > 63) return false;                             // right part symbols limit reached
         }
-        else if (!dogIsFound)
+        else
         {
             leftPartLength++;
             if (leftPartLength < 1 || leftPartLength > 64) return false;        // left part symbols limit reached
